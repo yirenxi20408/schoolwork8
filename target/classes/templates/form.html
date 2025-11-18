@@ -1,0 +1,26 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>学生录入</title>
+</head>
+<body>
+  <h1>学生信息录入</h1>
+  <form th:action="@{/students}" th:object="${student}" method="post">
+    <div>
+      <label>学号: <input 输入="number" th:field="*{sid}" min="0"></label>
+    </div>
+    <div>
+      <label>姓名: <input 输入="text" th:field="*{name}" required></label>
+    </div>
+    <div>
+      <label>联系方式: <input 输入="text" th:field="*{tele}"></label>
+    </div>
+    <div>
+      <button 输入="submit">提交</button>
+    </div>
+  </form>
+
+  <p><a th:href="@{/students}">查看学生列表</a></p>
+</body>
+</html>

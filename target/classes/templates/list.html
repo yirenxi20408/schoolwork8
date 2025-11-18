@@ -1,0 +1,24 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>学生列表</title>
+</head>
+<body>
+  <h1>学生列表</h1>
+  <table border="1">
+    <thead>
+      <tr><th>学号</th><th>姓名</th><th>联系方式</th></tr>
+    </thead>
+    <tbody>
+      <tr th:each="s : ${students}">
+        <td th:text="${s.sid}">1</td>
+        <td th:text="${s.name}">张三</td>
+        <td th:text="${s.tele}">19012323131</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><a th:href="@{/students/new}">添加新学生</a></p>
+</body>
+</html>
